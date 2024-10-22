@@ -12,9 +12,35 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- MARK:Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/index.css" />
   </head>
   <body>
-    <h1>welcome</h1>
+    <!-- add noscript -->
+    <noscript>You need JS to run</noscript>
+
+    <!-- MARK:Main -->
+    <main class="container">
+      <h1 class="my-5">Germon</h1>
+      <div class="form-floating mb-3">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Germon 1</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <!-- MARK: Image -->
+      <img src="https://placehold.co/400" class="img-fluid rounded-3" alt="" />
+    </main>
+
     <!-- MARK: Bootstrap link -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
