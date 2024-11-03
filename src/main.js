@@ -51,3 +51,20 @@ async function getDogBreed() {
       return console.log(err);
     }
   }
+
+  // === MARK: Render
+// Renders options inside select
+function renderOptions() {
+  getDogBreed().then((data) => {
+    const fragment = document.createDocumentFragment();
+
+    for (let breed of data) {
+      const option = document.createElement("option");
+      option.textContent = capitalize(breed);
+      option.value = breed;
+      fragment.appendChild(option);
+    }
+
+    selectEl.appendChild(fragment);
+  });
+}
