@@ -68,3 +68,23 @@ function renderOptions() {
     selectEl.appendChild(fragment);
   });
 }
+
+function renderCarousel(breed) {
+  carouselContainer.innerHTML = "";
+  // target with array loader
+  carouselContainer.appendChild(Carousel(["loader.gif"]), "loading..");
+  getBreedImages(breed).then((data) => {
+    carouselContainer.innerHTML = "";
+    const carousel = Carousel(data, breed);
+    carouselContainer.appendChild(carousel);
+  });
+}
+
+
+// Change on user select
+selectEl.addEventListener("change", (event) => {
+  renderCarousel(event.target.value);
+});
+
+renderOptions();
+renderCarousel("affenpinscher");
