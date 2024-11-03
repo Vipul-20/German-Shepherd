@@ -14,3 +14,29 @@ const carouselContainer = document.querySelector(".carousel-inner");
 
 // API
 const BASE_URL = `https://dog.ceo/api/`;
+
+
+// === MARK: Fetch
+// Gets the list of all breeds
+async function getDogBreed() {
+  // return fetch(`${BASE_URL}breeds/list/all`)
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     return Object.keys(data.message);
+  //   })
+  //   .catch((error) => console.log(error));
+  try {
+    const breeds = JSON.parse(localStorage.getItem("breeds"));
+    if (breeds) return breeds;
+
+    const res = await fetch(`${BASE_URL}breeds/list/all`);
+    const data = await res.json();
+    const breedsArr = Object.keys(data.message);
+
+    localStorage.setItem("breeds", JSON.stringify(breedsArr));
+
+    return breedsArr;
+  } catch (error) {
+    console.log(error);
+  }
+}
