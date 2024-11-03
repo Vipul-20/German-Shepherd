@@ -40,3 +40,14 @@ async function getDogBreed() {
     console.log(error);
   }
 }
+
+  // Gets [imagesx10] on breed
+  async function getBreedImages(breed) {
+    try {
+      const res = await fetch(`${BASE_URL}breed/${breed}/images`);
+      const data = await res.json();
+      return data.message.slice(0, 10);
+    } catch (err) {
+      return console.log(err);
+    }
+  }
